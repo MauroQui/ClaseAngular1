@@ -1,28 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MaterialModule } from '../../modules/material/material.module';
-import { RickAndMortyService } from '../../services/rick-and-morty.service';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-lista',
   standalone: true,
-  imports: [MaterialModule, HttpClientModule],
-  providers:[RickAndMortyService],
+  imports: [MaterialModule, CommonModule],
   templateUrl: './lista.component.html',
   styleUrl: './lista.component.css'
 })
-export class ListaComponent implements OnInit {
 
-  personajes: any;
+export class ListaComponent implements OnInit{
+  @Input() data: any 
 
-  constructor(private rymService: RickAndMortyService){}
+  constructor(){}
+
   ngOnInit(): void {
-    this.rymService.obtenerPersonajes().subscribe(
-      resultado => {
-        this.personajes = resultado;
-        console.log(this.personajes);
-      }
-    )
+    console.log(this.data);
   }
-
 }
