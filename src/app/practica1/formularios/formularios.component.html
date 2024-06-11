@@ -1,0 +1,18 @@
+<h1>Hola {{nombre}} </h1>
+
+<div>
+    <input type="text" placeholder="Ingresa tu nombre" [(ngModel)] = "nombre">
+    <br>
+    <button (click)="borrarNombre()">Borrar Nombre</button>
+</div>
+
+<div>
+    <button (click)="emisor.emit(nombre)">Emitir mensaje al Padre</button>
+</div>
+<!-- Condicion If de la forma antigua -->
+<h1 *ngIf="nombre === 'mauro'">Bienvenido Maestro</h1>
+
+<!-- Condicion If de la nueva forma -->
+@if(nombre === 'mauro') {
+    <h1>Sigue asi que lo estas haciendo muy bien!!!</h1>
+}

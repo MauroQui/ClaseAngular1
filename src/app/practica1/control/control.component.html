@@ -1,0 +1,30 @@
+@if (seMuestra1) {
+    <ul>
+        <!-- ciclo for de la forma antigua -->
+        <li *ngFor = "let fruta of frutas">{{fruta}}</li>
+    </ul>
+}
+<br>
+@if (seMuestra1) {
+    <button (click)="prenderApagar()">Ocultar el primer bloque</button>
+}@else {
+    <button (click)="prenderApagar()">Mostrar el primer bloque</button>
+}  
+<br>
+<hr>
+@if (seMuestra2) {
+
+    <ul>
+        <!-- ciclo for de la nueva forma -->
+        @for (fruta of frutas ; track $index){
+            <li>{{fruta}}</li>
+        } 
+    </ul>
+}
+@if (seMuestra2) {
+    <button (click)="prenderApagar2()">Ocultar el segundo bloque</button>
+}@else {
+    <button (click)="prenderApagar2()">Mostrar el segundo bloque</button>
+}
+
+
