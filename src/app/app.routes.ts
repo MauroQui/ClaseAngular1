@@ -5,12 +5,17 @@ import { MaterialComponent } from './practica2/material/material.component';
 import { CiclosVidaComponent } from './practica2/ciclos-vida/ciclos-vida.component';
 import { ListaComponent } from './practica3/lista/lista.component';
 import { ListaPersonajesComponent } from './practica4/lista-personajes/lista-personajes.component';
+import { PersonajeComponent } from './practica5/personaje/personaje.component';
 
 export const routes: Routes = [
-    
     {
         path: '',
         component: ListaPersonajesComponent 
+    },
+
+    {
+        path: 'personaje/:id',
+        component: PersonajeComponent
     },
     
     {

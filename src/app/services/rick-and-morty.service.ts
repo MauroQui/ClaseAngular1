@@ -12,4 +12,8 @@ export class RickAndMortyService {
   obtenerPersonajes(){
     return this.http.get(this.URLBase + '/character')
   }
+
+  obtenerUnPersonaje(id:string){
+    return this.http.get(`${this.URLBase}/character/${id}`)
+  }
 }
